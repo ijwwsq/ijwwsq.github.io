@@ -58,7 +58,8 @@ def main():
         html_content = markdown.markdown(md_content, extensions=['fenced_code', 'tables'])
 
         # Generate custom post HTML
-        out_filename = f"post-{file.replace('.md', '.html')}"
+        post_slug = f"post-{file.replace('.md', '')}"
+        out_filename = f"{post_slug}.html"
         
         post_html = post_templatestr.replace("{{FILENAME}}", file)
         post_html = post_html.replace("{{CONTENT}}", html_content)
@@ -68,7 +69,7 @@ def main():
 
         # Generate link for index
         # [2026-03-20] INFO: Title
-        link_str = f'<p><span class="dim">[{date_str}] INFO:</span> <a href="{out_filename}">{title}</a></p>'
+        link_str = f'<p><span class="dim">[{date_str}] INFO:</span> <a href="/{post_slug}">{title}</a></p>'
         post_links.append(link_str)
 
     current_time = datetime.now().strftime("%a %b %d %H:%M:%S")
