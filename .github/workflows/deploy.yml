@@ -1,30 +1,29 @@
-name: Deploy Static Website to GitHub Pages
+name: Deploy static content to Pages
 
 on:
-  # Запускается при каждом push-запросе в ветку main (или master)
   push:
-    branches: ["main", "master"]
-  # Позволяет запускать сборку вручную из интерфейса GitHub
+    branches: ["main"]
   workflow_dispatch:
 
-# Устанавливаем права доступа для деплоя
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Отменяем старые сборки, если прилетел новый коммит
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
+        
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -37,23 +36,15 @@ jobs:
 
       - name: Build Blog Posts
         run: python build.py
-
+        
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Загружаем всё содержимое репозитория
           path: '.'
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
