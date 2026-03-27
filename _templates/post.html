@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav>
+        <a href="index.html">~/home</a>
+        <a href="about.html">~/about</a>
+        <a href="projects.html">~/projects</a>
+        <a href="blog.html" class="active">~/blog</a>
+        <a href="contact.html">~/contact</a>
+    </nav>
+</header>
+
+<main class="terminal-content">
+    <div class="terminal-history">
+        <p>egor@node-01 /var/log/app % bg</p>
+        <p class="dim">[1]  + continued  tail -f journal.log</p>
+    </div>
+
+    <section class="section">
+        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/app %</span> <span class="cmd">cat {{FILENAME}}</span></h2>
+        
+        <div class="markdown-body">
+            {{CONTENT}}
+        </div>
+        
+        <div class="cursor-line mt">
+            <p><a href="blog.html" class="cmd">[ ← close file and return to logs ]</a></p>
+            <br>
+            <span class="dim">egor@node-01 /var/log/app %</span> <span class="cursor"></span>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

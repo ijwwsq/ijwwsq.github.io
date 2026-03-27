@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Blog Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav>
+        <a href="index.html">~/home</a>
+        <a href="about.html">~/about</a>
+        <a href="projects.html">~/projects</a>
+        <a href="blog.html" class="active">~/blog</a>
+        <a href="contact.html">~/contact</a>
+    </nav>
+</header>
+
+<main class="terminal-content">
+    <div class="terminal-history">
+        <p>egor@node-01 /var/log/app % bg</p>
+        <p class="dim">[1]  + continued  tail -f journal.log</p>
+    </div>
+
+    <section class="section">
+        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/app %</span> <span class="cmd">cat 2026-03-20-tableau-limits.md</span></h2>
+        
+        <div class="markdown-body">
+            <h1>The Limits of Tableau</h1>
+<p>Sometimes, dragging and dropping pills onto a canvas is not enough.</p>
+<h2>The Problem</h2>
+<p>When dealing with billions of rows, simple aggregate queries take far too long. Dashboards become unacceptably slow, taking over 10 seconds to render. Users hate this. I hate this.</p>
+<h2>The Solution</h2>
+<p>Instead of forcing the BI tool to do the heavy lifting:
+1. Aggregate data pipeline in <strong>Python</strong> using <code>pandas</code> (or <code>dask</code> if memory is an issue)
+2. Store pre-aggregated rollups in a fast datastore like <strong>PostgreSQL</strong> or <strong>ClickHouse</strong>
+3. Point Tableau only to the aggregated views.</p>
+<pre><code class="language-python">import pandas as pd
+
+def process_chunk(df):
+    # Perform grouping before ever hitting the BI tool
+    return df.groupby([&quot;date&quot;, &quot;region_id&quot;])[&quot;revenue&quot;].sum().reset_index()
+</code></pre>
+<p>If your query takes more than 3 seconds in the source logic, no amount of Tableau magic will fix it. Fix your data models first.</p>
+        </div>
+        
+        <div class="cursor-line mt">
+            <p><a href="blog.html" class="cmd">[ ← close file and return to logs ]</a></p>
+            <br>
+            <span class="dim">egor@node-01 /var/log/app %</span> <span class="cursor"></span>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

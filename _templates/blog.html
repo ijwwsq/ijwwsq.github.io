@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav>
+        <a href="index.html">~/home</a>
+        <a href="about.html">~/about</a>
+        <a href="projects.html">~/projects</a>
+        <a href="blog.html" class="active">~/blog</a>
+        <a href="contact.html">~/contact</a>
+    </nav>
+</header>
+
+<main class="terminal-content">
+    <div class="terminal-history">
+        <p>Last login: {{TIME}} on ttys001</p>
+        <p>egor@node-01 ~ % cd /var/log/app</p>
+        <p>egor@node-01 /var/log/app % grep "ERROR" ./*</p>
+        <p class="dim">grep: No match.</p>
+    </div>
+
+    <section class="section">
+        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/app %</span> <span class="cmd">tail -f journal.log</span></h2>
+        
+        <div class="terminal-text post-list" id="blog-posts">
+            <p class="dim">Monitoring log file (CTRL+C to quit)...</p>
+            <br>
+            {{POST_LIST}}
+        </div>
+        
+        <div class="cursor-line mt">
+            <span class="dim">egor@node-01 /var/log/app %</span> <span class="cursor"></span>
+        </div>
+    </section>
+</main>
+
+<script>
+    setTimeout(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+    }, 100);
+</script>
+</body>
+</html>

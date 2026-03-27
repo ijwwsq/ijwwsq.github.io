@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav>
+        <a href="index.html">~/home</a>
+        <a href="about.html" class="active">~/about</a>
+        <a href="projects.html">~/projects</a>
+        <a href="blog.html">~/blog</a>
+        <a href="contact.html">~/contact</a>
+    </nav>
+</header>
+
+<main class="terminal-content">
+    <div class="terminal-history">
+        <p>Last login: Wed Mar 27 02:14:55 on pts/0</p>
+        <p>egor@node-01 ~ % cd /home/egor/about</p>
+        <p>egor@node-01 ~/about % ls -la</p>
+        <p>total 4</p>
+        <p>drwxr-xr-x   2 egor 4096 Mar 27 02:15 .</p>
+        <p>drwxr-xr-x  10 egor 4096 Mar 27 02:14 ..</p>
+        <p>-rw-r--r--   1 egor 1024 Mar 27 02:15 about.txt</p>
+    </div>
+
+    <section class="section">
+        <h2 class="prompt custom"><span class="dim">egor@node-01 ~/about %</span> <span class="cmd">cat about.txt</span></h2>
+        
+        <div class="terminal-text">
+            <p>Hello. I'm Egor Novikov.</p>
+            <p>I analyze data, find hidden patterns, and write clever scripts so I don't have to point-and-click.</p>
+            <p>I spend my time figuring out why the Tableau dashboard takes 5 minutes to load, automating data pipelines, and reading thick books on statistics because someone has to.</p>
+            <br>
+            <p>Core Directives:</p>
+            <ul>
+                <li>- Tableau / BI — Building dashboards that stakeholders actually understand</li>
+                <li>- Python — Tooling, pipelines, and local storage magic</li>
+                <li>- SQL — Finding the missing JOIN and optimizing queries</li>
+                <li>- General reading & continuous learning</li>
+            </ul>
+        </div>
+        
+        <div class="cursor-line mt">
+            <span class="dim">egor@node-01 ~/about %</span> <span class="cursor"></span>
+        </div>
+    </section>
+</main>
+</body>
+</html>

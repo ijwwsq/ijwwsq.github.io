@@ -1,0 +1,196 @@
+:root {
+    --bg-color: #050505;
+    --text-color: #d1d1d1;
+    --highlight: #ffffff;
+    --dim: #5c5c5c;
+    --border: #1f1f1f;
+    --font-mono: ui-monospace, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: #cccccc;
+    color: #000000;
+}
+
+::-moz-selection {
+    background: #cccccc;
+    color: #000000;
+}
+
+body, html {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.6;
+    height: 100%;
+}
+
+/* Header */
+.site-header {
+    width: 100%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    margin-bottom: 30px;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.site-header a {
+    color: var(--dim);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.site-header a:hover, .site-header a.active {
+    color: var(--text-color);
+}
+
+/* Content Area */
+.terminal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 40px 20px;
+}
+
+/* NeoFetch */
+.neofetch {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0 40px 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ascii-art {
+    white-space: pre;
+    font-weight: normal;
+    color: var(--text-color);
+    line-height: 1.15;
+    font-size: 14px;
+}
+
+.neofetch-info p { margin: 2px 0; }
+.neofetch-info .label { display: inline-block; width: 85px; color: var(--dim); }
+.neofetch-info .highlight { font-weight: normal; color: var(--highlight); }
+
+/* Typography & Layout */
+.dim { color: var(--dim); }
+
+.sys-msg {
+    color: var(--dim);
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.terminal-history {
+    color: var(--dim);
+    margin-bottom: 25px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    border-left: 2px solid var(--border);
+    padding-left: 15px;
+}
+
+.section { padding-top: 10px; }
+.mt { margin-top: 30px; }
+
+.prompt::before {
+    content: "egor@node-01 ~ % ";
+    color: var(--dim);
+}
+
+.prompt.custom::before { content: ""; }
+
+h1.prompt, h2.prompt {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.cmd {
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-color: var(--dim);
+    text-underline-offset: 3px;
+}
+a:hover { 
+    color: var(--highlight); 
+    text-decoration-color: var(--highlight);
+}
+ul { list-style: none; }
+
+.terminal-text { margin-left: 20px; }
+.subtitle { color: var(--dim); margin-top: 5px; }
+
+/* Blog Posts */
+.post-list p { margin-bottom: 8px; }
+
+/* Markdown Content */
+.markdown-body {
+    margin-left: 20px;
+    color: var(--text-color);
+    max-width: 700px;
+}
+.markdown-body h1 {
+    color: var(--highlight);
+    margin: 25px 0 15px;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+.markdown-body h2 {
+    color: var(--highlight);
+    margin: 20px 0 10px;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+.markdown-body p { margin-bottom: 15px; }
+.markdown-body ul { margin-bottom: 15px; margin-left: 20px; list-style-type: square; }
+.markdown-body li { margin-bottom: 5px; color: var(--dim); }
+.markdown-body li strong { color: var(--text-color); font-weight: normal; }
+.markdown-body pre {
+    background: #0a0a0a;
+    padding: 15px;
+    border: 1px solid var(--border);
+    overflow-x: auto;
+    margin: 15px 0;
+}
+.markdown-body code {
+    background: #0a0a0a;
+    padding: 2px 5px;
+    border: 1px solid var(--border);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--dim);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
