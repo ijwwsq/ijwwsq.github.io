@@ -3,45 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Contact</title>
+    <title>egor@node-01 ~ contact</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
     <nav>
-        <a href="/">~/home</a>
-        <a href="/about">~/about</a>
-        <a href="/projects">~/projects</a>
-        <a href="/blog">~/blog</a>
-        <a href="/contact" class="active">~/contact</a>
+        <a href="/" class="site-logo">EN_//</a>
+        <a href="/">home</a>
+        <a href="/about.html">about</a>
+        <a href="/projects.html">projects</a>
+        <a href="/blog.html">blog</a>
+        <a href="/contact.html" class="active">contact</a>
     </nav>
 </header>
 
 <main class="terminal-content">
     <div class="terminal-history">
-        <p>Last login: Wed Mar 27 02:22:15 on pts/4</p>
-        <p>egor@node-01 ~ % ping -c 3 github.com</p>
-        <p class="dim">PING github.com (140.82.113.3): 56 data bytes</p>
-        <p class="dim">64 bytes from 140.82.113.3: icmp_seq=0 ttl=53 time=14.038 ms</p>
-        <p class="dim">64 bytes from 140.82.113.3: icmp_seq=1 ttl=53 time=14.045 ms</p>
-        <p class="dim">64 bytes from 140.82.113.3: icmp_seq=2 ttl=53 time=13.882 ms</p>
-        <p class="dim">--- github.com ping statistics ---</p>
-        <p class="dim">3 packets transmitted, 3 packets received, 0.0% packet loss</p>
+        <p>egor@node-01 ~ $ ./open_channels --secure --handshake</p>
+        <p class="dim">negotiating encrypted session...</p>
+        <p><span class="ok">[ OK ]</span> tunnel established. 0.0% packet loss.</p>
     </div>
 
     <section class="section">
-        <h2 class="prompt custom"><span class="dim">egor@node-01 ~ %</span> <span class="cmd">cat .contact_info</span></h2>
-        
-        <div class="terminal-text">
-            <p>GitHub:   <a href="https://github.com/ijwwsq" target="_blank">github.com/ijwwsq</a></p>
-            <p>Telegram: <a href="https://t.me/mmorwyn" target="_blank">t.me/mmorwyn</a></p>
+        <h1 class="hero-title"><span class="glitch" data-text="open channels">open channels</span></h1>
+        <p class="hero-tagline">Got a dataset that doesn't add up? A dashboard that needs saving? A job that needs an analyst? Pick a channel.</p>
+
+        <div class="channel-list mt">
+            <a class="channel" href="https://github.com/ijwwsq" target="_blank" rel="noopener">
+                <span class="ch-proto">git://</span>
+                <span class="ch-addr">github.com/ijwwsq</span>
+                <span class="ch-status">● LIVE</span>
+            </a>
+            <a class="channel" href="https://t.me/mmorwyn" target="_blank" rel="noopener">
+                <span class="ch-proto">msg://</span>
+                <span class="ch-addr">t.me/mmorwyn</span>
+                <span class="ch-status">● LIVE</span>
+            </a>
         </div>
-        
+
         <div class="cursor-line mt">
-            <span class="dim">egor@node-01 ~ %</span> <span class="cursor"></span>
+            <span class="prompt"></span><span class="cursor"></span>
         </div>
     </section>
 </main>
+
+<footer class="site-footer">
+    <span>egor.novikov // data_analyst</span>
+    <span class="f-tag">[ DATA WANTS TO BE UNDERSTOOD ]</span>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

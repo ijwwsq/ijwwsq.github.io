@@ -69,7 +69,7 @@ def main():
 
         # Generate link for index
         # [2026-03-20] INFO: Title
-        link_str = f'<p><span class="dim">[{date_str}] INFO:</span> <a href="/{post_slug}">{title}</a></p>'
+        link_str = f'<p><span class="dim">[{date_str}] INFO:</span> <a href="/{post_slug}.html">{title}</a></p>'
         post_links.append(link_str)
 
     current_time = datetime.now().strftime("%a %b %d %H:%M:%S")

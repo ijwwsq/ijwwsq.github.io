@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Blog Post</title>
+    <title>egor@node-01 ~ log entry</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
     <nav>
-        <a href="/">~/home</a>
-        <a href="/about">~/about</a>
-        <a href="/projects">~/projects</a>
-        <a href="/blog" class="active">~/blog</a>
-        <a href="/contact">~/contact</a>
+        <a href="/" class="site-logo">EN_//</a>
+        <a href="/">home</a>
+        <a href="/about.html">about</a>
+        <a href="/projects.html">projects</a>
+        <a href="/blog.html" class="active">blog</a>
+        <a href="/contact.html">contact</a>
     </nav>
 </header>
 
 <main class="terminal-content">
     <div class="terminal-history">
-        <p>egor@node-01 /var/log/app % bg</p>
+        <p>egor@node-01 /var/log/brain $ bg</p>
         <p class="dim">[1]  + continued  tail -f journal.log</p>
     </div>
 
     <section class="section">
-        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/app %</span> <span class="cmd">cat 2026-03-20-tableau-limits.md</span></h2>
-        
+        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/brain $</span> <span class="cmd">cat 2026-03-20-tableau-limits.md</span></h2>
+
         <div class="markdown-body">
             <h1>The Limits of Tableau</h1>
 <p>Sometimes, dragging and dropping pills onto a canvas is not enough.</p>
@@ -45,14 +46,20 @@ def process_chunk(df):
 </code></pre>
 <p>If your query takes more than 3 seconds in the source logic, no amount of Tableau magic will fix it. Fix your data models first.</p>
         </div>
-        
+
         <div class="cursor-line mt">
-            <p><a href="/blog" class="cmd">[ ← close file and return to logs ]</a></p>
+            <p><a href="/blog.html" class="cmd">[ ← close file and return to logs ]</a></p>
             <br>
-            <span class="dim">egor@node-01 /var/log/app %</span> <span class="cursor"></span>
+            <span class="dim">egor@node-01 /var/log/brain $</span> <span class="cursor"></span>
         </div>
     </section>
 </main>
 
+<footer class="site-footer">
+    <span>egor.novikov // data_analyst</span>
+    <span class="f-tag">[ DATA WANTS TO BE UNDERSTOOD ]</span>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

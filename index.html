@@ -3,84 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Home</title>
+    <title>egor@node-01 ~ home</title>
+    <meta name="description" content="Egor Novikov — data analyst & developer. SQL, Python, Tableau.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
     <nav>
-        <a href="/" class="active">~/home</a>
-        <a href="/about">~/about</a>
-        <a href="/projects">~/projects</a>
-        <a href="/blog">~/blog</a>
-        <a href="/contact">~/contact</a>
+        <a href="/" class="site-logo">EN_//</a>
+        <a href="/" class="active">home</a>
+        <a href="/about.html">about</a>
+        <a href="/projects.html">projects</a>
+        <a href="/blog.html">blog</a>
+        <a href="/contact.html">contact</a>
     </nav>
 </header>
 
 <main class="terminal-content">
     <section class="section">
-        <h1 class="prompt"><span class="cmd">neofetch</span></h1>
-        
-        <div class="neofetch">
-            <div class="ascii-art">
-       _,met$$$$$gg.
-    ,g$$$$$$$$$$$$$$$P.
-  ,g$$P"     """Y$$.".
- ,$$P'              `$$$.
-',$$P       ,ggs.     `$$b:
-`d$$'     ,$P"'   .    $$$
- $$P      d$'     ,    $$P
- $$:      $$.   -    ,d$$'
- $$;      Y$b._   _,d$P'
- Y$$.    `.`"Y$$$$P"'
- `$$b      "-.__
-  `Y$$
-   `Y$$.
-     `$$b.
-       `Y$$b.
-          `"Y$b._
-              `"""
+        <div class="sys-msg" data-boot='[
+            "[ OK ] Kernel 6.1.0-18 loaded.",
+            "[ OK ] Mounted /dev/data — 2.4TB of raw chaos.",
+            "[WARN] Tableau daemon consuming 97% RAM. As usual.",
+            "[ OK ] Pattern recognition module: ACTIVE.",
+            "[ OK ] Coffee subsystem: PRESSURIZED.",
+            "> access granted. welcome back, egor."
+        ]'></div>
+
+        <h1 class="hero-title"><span class="glitch" data-text="egor novikov">egor novikov</span></h1>
+        <p class="hero-role"><span id="typed-role" data-roles='["DATA ANALYST","SQL OPERATOR","DASHBOARD ENGINEER","PIPELINE AUTOMATOR","PATTERN HUNTER"]'>&#8203;<span class="typed-cursor"></span></span></p>
+        <p class="hero-tagline">Extracting meaning from chaos. Writing code when Tableau limits finally break me. Every dataset has a story — I make it confess.</p>
+
+        <h2 class="sec-label">system_scan</h2>
+        <div class="stat-grid">
+            <div class="stat-cell">
+                <div class="stat-key">primary_weapon</div>
+                <div class="stat-val">SQL <span class="u">// joins that land</span></div>
             </div>
-            
-            <div class="neofetch-info">
-                <p><span class="highlight">egor</span>@<span class="highlight">node-01</span></p>
-                <p>-------------------</p>
-                <p><span class="label">OS:</span> Debian GNU/Linux 12 (bookworm) x86_64</p>
-                <p><span class="label">Host:</span> Data Processing Node</p>
-                <p><span class="label">Kernel:</span> 6.1.0-18</p>
-                <p><span class="label">Uptime:</span> 142 days, 3 hours</p>
-                <p><span class="label">Packages:</span> 415 (dpkg), 128 (pip)</p>
-                <p><span class="label">Shell:</span> zsh 5.9</p>
-                <p><span class="label">Terminal:</span> tmux</p>
-                <p><span class="label">Runtime:</span> Coffee & Documentation</p>
+            <div class="stat-cell">
+                <div class="stat-key">sidearm</div>
+                <div class="stat-val">Python <span class="u">// pipelines &amp; tooling</span></div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-key">visual_cortex</div>
+                <div class="stat-val">Tableau <span class="u">// BI &amp; dashboards</span></div>
+            </div>
+            <div class="stat-cell">
+                <div class="stat-key">uptime</div>
+                <div class="stat-val">142d 3h <span class="u">// still running</span></div>
             </div>
         </div>
-        
-        <p class="sys-msg" id="boot-text"></p>
-        
-        <h1 class="prompt mt"><span class="cmd">whoami</span></h1>
-        <p>Egor Novikov | Data Analyst & Developer</p>
-        <p class="subtitle">Extracting meaning from chaos. Writing code when Tableau limits finally break me.</p>
-        
+
+        <h2 class="sec-label">quick_access</h2>
+        <div class="cta-row">
+            <a href="/projects.html" class="btn">&gt; view_projects</a>
+            <a href="/about.html" class="btn">&gt; profile_scan</a>
+            <a href="/contact.html" class="btn alt">&gt; open_channel</a>
+        </div>
+
         <div class="cursor-line mt">
             <span class="prompt"></span><span class="cursor"></span>
         </div>
     </section>
 </main>
 
-<script>
-    const text = "[ OK ] Started Data Processing Daemon.\n[ OK ] Reached target System Initialization.\n[ OK ] Listening on Worker Sockets.\n[ OK ] Reached target Multi-User System.\nStarting interactive shell...";
-    let i = 0;
-    const sysMsg = document.getElementById("boot-text");
-    function type() {
-        if(i < text.length) {
-            sysMsg.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-            i++;
-            setTimeout(type, 20);
-        }
-    }
-    type();
-</script>
+<footer class="site-footer">
+    <span>egor.novikov // data_analyst</span>
+    <span class="f-tag">[ DATA WANTS TO BE UNDERSTOOD ]</span>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

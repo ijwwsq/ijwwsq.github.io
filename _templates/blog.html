@@ -3,48 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Blog</title>
+    <title>egor@node-01 ~ blog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
     <nav>
-        <a href="/">~/home</a>
-        <a href="/about">~/about</a>
-        <a href="/projects">~/projects</a>
-        <a href="/blog" class="active">~/blog</a>
-        <a href="/contact">~/contact</a>
+        <a href="/" class="site-logo">EN_//</a>
+        <a href="/">home</a>
+        <a href="/about.html">about</a>
+        <a href="/projects.html">projects</a>
+        <a href="/blog.html" class="active">blog</a>
+        <a href="/contact.html">contact</a>
     </nav>
 </header>
 
 <main class="terminal-content">
     <div class="terminal-history">
         <p>Last login: {{TIME}} on ttys001</p>
-        <p>egor@node-01 ~ % cd /var/log/app</p>
-        <p>egor@node-01 /var/log/app % grep "ERROR" ./*</p>
-        <p class="dim">grep: No match.</p>
+        <p>egor@node-01 ~ $ cd /var/log/brain</p>
+        <p>egor@node-01 /var/log/brain $ grep "ERROR" ./*</p>
+        <p class="dim">grep: No match. (surprisingly)</p>
     </div>
 
     <section class="section">
-        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/app %</span> <span class="cmd">tail -f journal.log</span></h2>
-        
+        <h2 class="sec-label">journal</h2>
+        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/brain $</span> <span class="cmd">tail -f journal.log</span></h2>
+
         <div class="terminal-text post-list" id="blog-posts">
             <p class="dim">Monitoring log file (CTRL+C to quit)...</p>
             <br>
             {{POST_LIST}}
         </div>
-        
+
         <div class="cursor-line mt">
-            <span class="dim">egor@node-01 /var/log/app %</span> <span class="cursor"></span>
+            <span class="dim">egor@node-01 /var/log/brain $</span> <span class="cursor"></span>
         </div>
     </section>
 </main>
 
-<script>
-    setTimeout(() => {
-        window.scrollTo(0, document.body.scrollHeight);
-    }, 100);
-</script>
+<footer class="site-footer">
+    <span>egor.novikov // data_analyst</span>
+    <span class="f-tag">[ DATA WANTS TO BE UNDERSTOOD ]</span>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

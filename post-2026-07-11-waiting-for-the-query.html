@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>egor@node-01 ~ log entry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav>
+        <a href="/" class="site-logo">EN_//</a>
+        <a href="/">home</a>
+        <a href="/about.html">about</a>
+        <a href="/projects.html">projects</a>
+        <a href="/blog.html" class="active">blog</a>
+        <a href="/contact.html">contact</a>
+    </nav>
+</header>
+
+<main class="terminal-content">
+    <div class="terminal-history">
+        <p>egor@node-01 /var/log/brain $ bg</p>
+        <p class="dim">[1]  + continued  tail -f journal.log</p>
+    </div>
+
+    <section class="section">
+        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/brain $</span> <span class="cmd">cat 2026-07-11-waiting-for-the-query.md</span></h2>
+
+        <div class="markdown-body">
+            <h1>Waiting for the Query</h1>
+<blockquote>
+<p>ESTRAGON: Let's go.<br />
+VLADIMIR: We can't.<br />
+ESTRAGON: Why not?<br />
+VLADIMIR: We're waiting for the query.</p>
+</blockquote>
+<p>A tragicomedy in two acts, performed nightly in every analytics department. Act One: the dashboard is loading. Act Two: the dashboard is still loading. Critics call it "unbearable". Users call it "Tuesday".</p>
+<h2>The trial</h2>
+<p>Someone must have slandered my query, because one morning, without having done anything wrong, it was killed by the OOM killer.</p>
+<p>I appealed, of course. I opened <code>EXPLAIN ANALYZE</code> — the closest thing our profession has to reading your own case file. The verdict was in there, buried in the bureaucratic prose the planner favors:</p>
+<pre><code>-&gt;  Nested Loop  (cost=0.00..4148174.93 rows=1 width=8)
+      (actual time=284611.02..284611.02 rows=9451223 loops=1)
+</code></pre>
+<p>Note the two numbers. The court <em>estimated</em> one row. Nine and a half million showed up. This is not an error, the planner explains patiently; this is an <em>estimate</em>. The planner has never been wrong. The planner has merely been given outdated statistics, and whose fault is that? Yours. You never ran <code>ANALYZE</code>. The trial was fair.</p>
+<h2>What the query was waiting for</h2>
+<p>It turned out — it always turns out — that the query was waiting for the same three things everything waits for:</p>
+<ol>
+<li><strong>An index</strong> that existed in staging, in documentation, and in everyone's heart, but not in production.</li>
+<li><strong>A <code>DISTINCT</code></strong> someone added in 2024 "just in case", which the database honored the way a monk honors a vow: silently, completely, and at enormous cost.</li>
+<li><strong>A join condition.</strong> The missing JOIN doesn't announce itself. It just quietly hands you the Cartesian product — every row introduced to every other row, like a wedding where nobody knows the couple but everyone came anyway.</li>
+</ol>
+<p>Fixed all three. The query now runs in 1.4 seconds. Nobody noticed. This is the correct outcome: performance work is only ever visible when you don't do it.</p>
+<h2>Godot arrives</h2>
+<p>Here the play and the profession part ways. Beckett's Godot never comes. The query, eventually, returns — that's the miracle of our art form. You wait, you doubt, you consider a career in carpentry, and then: <code>9451223 rows affected</code>. Meaning arrives. It just doesn't arrive <em>on time</em>.</p>
+<blockquote>
+<p>VLADIMIR: Well? Shall we go?<br />
+ESTRAGON: Yes, let's go.</p>
+<p><em>They do not move. The dashboard is refreshing.</em></p>
+</blockquote>
+        </div>
+
+        <div class="cursor-line mt">
+            <p><a href="/blog.html" class="cmd">[ ← close file and return to logs ]</a></p>
+            <br>
+            <span class="dim">egor@node-01 /var/log/brain $</span> <span class="cursor"></span>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <span>egor.novikov // data_analyst</span>
+    <span class="f-tag">[ DATA WANTS TO BE UNDERSTOOD ]</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

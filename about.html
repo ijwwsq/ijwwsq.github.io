@@ -3,53 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - About</title>
+    <title>egor@node-01 ~ about</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
     <nav>
-        <a href="/">~/home</a>
-        <a href="/about" class="active">~/about</a>
-        <a href="/projects">~/projects</a>
-        <a href="/blog">~/blog</a>
-        <a href="/contact">~/contact</a>
+        <a href="/" class="site-logo">EN_//</a>
+        <a href="/">home</a>
+        <a href="/about.html" class="active">about</a>
+        <a href="/projects.html">projects</a>
+        <a href="/blog.html">blog</a>
+        <a href="/contact.html">contact</a>
     </nav>
 </header>
 
 <main class="terminal-content">
     <div class="terminal-history">
-        <p>Last login: Wed Mar 27 02:14:55 on pts/0</p>
-        <p>egor@node-01 ~ % cd /home/egor/about</p>
-        <p>egor@node-01 ~/about % ls -la</p>
-        <p>total 4</p>
-        <p>drwxr-xr-x   2 egor 4096 Mar 27 02:15 .</p>
-        <p>drwxr-xr-x  10 egor 4096 Mar 27 02:14 ..</p>
-        <p>-rw-r--r--   1 egor 1024 Mar 27 02:15 about.txt</p>
+        <p>egor@node-01 ~ $ ./profile_scan --target egor --deep</p>
+        <p><span class="ok">[■■■■■■■■■■]</span> 100% — subject identified</p>
+        <p class="dim">decrypting dossier...</p>
     </div>
 
     <section class="section">
-        <h2 class="prompt custom"><span class="dim">egor@node-01 ~/about %</span> <span class="cmd">cat about.txt</span></h2>
-        
+        <div class="dossier">
+            <div class="dossier-row"><span class="k">name</span><span class="v">Egor Novikov</span></div>
+            <div class="dossier-row"><span class="k">designation</span><span class="v">Data Analyst &amp; Developer</span></div>
+            <div class="dossier-row"><span class="k">threat_level</span><span class="v"><span class="red">HIGH</span> — to messy spreadsheets and unindexed tables</span></div>
+            <div class="dossier-row"><span class="k">known_habits</span><span class="v">automating anything clicked more than twice; reading thick statistics books because someone has to</span></div>
+            <div class="dossier-row"><span class="k">last_seen</span><span class="v">figuring out why the dashboard takes 5 minutes to load</span></div>
+            <div class="dossier-row"><span class="k">motive</span><span class="v">every dataset hides a pattern. finding it is the job. enjoying it is the bonus.</span></div>
+        </div>
+
+        <h2 class="sec-label">skill_matrix</h2>
+        <div class="skills">
+            <div class="skill-row">
+                <span class="skill-name">SQL</span>
+                <div class="skill-track"><div class="skill-fill" data-pct="92"></div></div>
+                <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Tableau / BI</span>
+                <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+                <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Python</span>
+                <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+                <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">ETL / pipelines</span>
+                <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+                <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Statistics</span>
+                <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
+                <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Point &amp; click</span>
+                <div class="skill-track"><div class="skill-fill" data-pct="4"></div></div>
+                <span class="skill-pct dim">4%</span>
+            </div>
+        </div>
+
+        <h2 class="sec-label">core_directives</h2>
         <div class="terminal-text">
-            <p>Hello. I'm Egor Novikov.</p>
-            <p>I analyze data, find hidden patterns, and write clever scripts so I don't have to point-and-click.</p>
-            <p>I spend my time figuring out why the Tableau dashboard takes 5 minutes to load, automating data pipelines, and reading thick books on statistics because someone has to.</p>
-            <br>
-            <p>Core Directives:</p>
             <ul>
-                <li>- Tableau / BI — Building dashboards that stakeholders actually understand</li>
-                <li>- Python — Tooling, pipelines, and local storage magic</li>
-                <li>- SQL — Finding the missing JOIN and optimizing queries</li>
-                <li>- General reading & continuous learning</li>
+                <li><span class="dim">&gt;</span> Build dashboards that stakeholders actually understand</li>
+                <li><span class="dim">&gt;</span> Find the missing JOIN before it finds you</li>
+                <li><span class="dim">&gt;</span> If it's manual and repeated — it gets scripted</li>
+                <li><span class="dim">&gt;</span> Read the docs. Then read the source. Then write the fix.</li>
             </ul>
         </div>
-        
+
         <div class="cursor-line mt">
-            <span class="dim">egor@node-01 ~/about %</span> <span class="cursor"></span>
+            <span class="prompt"></span><span class="cursor"></span>
         </div>
     </section>
 </main>
+
+<footer class="site-footer">
+    <span>egor.novikov // data_analyst</span>
+    <span class="f-tag">[ DATA WANTS TO BE UNDERSTOOD ]</span>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

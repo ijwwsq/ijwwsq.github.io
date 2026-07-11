@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>egor@node-01 ~ log entry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav>
+        <a href="/" class="site-logo">EN_//</a>
+        <a href="/">home</a>
+        <a href="/about.html">about</a>
+        <a href="/projects.html">projects</a>
+        <a href="/blog.html" class="active">blog</a>
+        <a href="/contact.html">contact</a>
+    </nav>
+</header>
+
+<main class="terminal-content">
+    <div class="terminal-history">
+        <p>egor@node-01 /var/log/brain $ bg</p>
+        <p class="dim">[1]  + continued  tail -f journal.log</p>
+    </div>
+
+    <section class="section">
+        <h2 class="prompt custom"><span class="dim">egor@node-01 /var/log/brain $</span> <span class="cmd">cat 2026-07-08-anna-karenina-principle.md</span></h2>
+
+        <div class="markdown-body">
+            <h1>The Anna Karenina Principle of Data Quality</h1>
+<p>All clean datasets are alike; every dirty dataset is dirty in its own way.</p>
+<p>Tolstoy figured this out in 1877, he just didn't have the tooling to prove it. A clean dataset is boring in the best sense of the word: types match, keys join, dates live in the current century. There is exactly one way for all of this to be true, and infinitely many ways for any of it to be false.</p>
+<h2>A field guide to unhappy families</h2>
+<p>Over the years I've been keeping a mental taxonomy. Every dirty dataset I've met belongs to at least one of these households:</p>
+<ul>
+<li><strong>The time travelers.</strong> Orders delivered on <code>1970-01-01</code>, users born in <code>2201</code>. Somebody cast an empty string to a timestamp and now a third of your cohort predates Unix itself.</li>
+<li><strong>The identity crisis.</strong> <code>user_id</code> is an integer in one table, a string in another, and in the third it's an email address, because the intern was told to "just make it work" and, to be fair, it did.</li>
+<li><strong>The quiet NULLs.</strong> Not the honest <code>NULL</code> — the string <code>"NULL"</code>. Also <code>"N/A"</code>, <code>"-"</code>, <code>"нет"</code>, and my personal favorite, <code>" "</code> (one space, load-bearing).</li>
+<li><strong>The Excel survivor.</strong> It was a CSV once. Then someone opened it in Excel, and now every 16-digit ID ends in <code>E+15</code> and the phone numbers are dates in March.</li>
+<li><strong>The encoding martyr.</strong> Half the names are <code>Ð•Ð³Ð¾Ñ€</code>. The other half are fine, which is somehow worse, because now it's a <em>conditional</em> bug.</li>
+</ul>
+<h2>The principle in practice</h2>
+<p>The corollary is what matters. You cannot write one validator for "dirty" — dirt has too many degrees of freedom. But you can write one validator for "clean", because clean is a single point in the space:</p>
+<pre><code class="language-sql">SELECT
+    count(*)                                    AS rows_total,
+    count(*) FILTER (WHERE id IS NULL)          AS orphans,
+    count(*) FILTER (WHERE created_at &lt; '2000-01-01') AS time_travelers,
+    count(*) FILTER (WHERE email !~ '@')        AS definitely_not_emails
+FROM users;
+</code></pre>
+<p>If every counter after the first is zero — congratulations, your family is happy. If not, at least now you know <em>which</em> chapter of the novel you're in.</p>
+<h2>Epilogue</h2>
+<p>Levin found meaning in working the land. I find it in a <code>WHERE</code> clause that finally returns zero rows of garbage. I am not saying these are the same thing. I am saying they are not different things.</p>
+<p><em>Data wants to be understood. Sometimes it just needs eight hundred pages to open up.</em></p>
+        </div>
+
+        <div class="cursor-line mt">
+            <p><a href="/blog.html" class="cmd">[ ← close file and return to logs ]</a></p>
+            <br>
+            <span class="dim">egor@node-01 /var/log/brain $</span> <span class="cursor"></span>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <span>egor.novikov // data_analyst</span>
+    <span class="f-tag">[ DATA WANTS TO BE UNDERSTOOD ]</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
